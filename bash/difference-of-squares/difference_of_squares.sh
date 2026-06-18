@@ -12,7 +12,7 @@ sum_of_squares () {
     echo $(( n * (n + 1) * (2 * n + 1) / 6 ))
 }
 
-difference_of_squares () {
+difference () {
     sum=$(( n * (n + 1) / 2 ))
     squares=$(( n * (n + 1) * (2 * n + 1) / 6 ))
 
