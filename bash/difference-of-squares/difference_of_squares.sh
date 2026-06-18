@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
 
-n="$1"
+command="$1"
+n="$2"
 
-sum=0
-sum_squares=0
+square_of_sum () {
+    sum=$(( n * (n + 1) / 2 ))
+    echo $(( sum ** 2 ))
+}
 
-for (( i=1; i<=n; i++ ))
-do
-    (( sum += i ))
-    (( sum_squares += i ** 2 ))
-done
+sum_of_squares () {
+    echo $(( n * (n + 1) * (2 * n + 1) / 6 ))
+}
 
-square_sum=$(( sum ** 2 ))
+difference_of_squares () {
+    sum=$(( n * (n + 1) / 2 ))
+    squares=$(( n * (n + 1) * (2 * n + 1) / 6 ))
 
-echo $(( square_sum - sum_squares ))
+    echo $(( sum ** 2 - squares ))
+}
+
+"$command"
