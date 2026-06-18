@@ -29,18 +29,17 @@ if [[ "$command" == "allergic_to" ]]; then
     exit 0
 fi
 
-if [[ "$command" == "list" ]]
-then
+if [[ "$command" == "list" ]]; then
     result=""
 
-    (( score & 1 )) && result+="eggs "
-    (( score & 2 )) && result+="peanuts "
-    (( score & 4 )) && result+="shellfish "
-    (( score & 8 )) && result+="strawberries "
-    (( score & 16 )) && result+="tomatoes "
-    (( score & 32 )) && result+="chocolate "
-    (( score & 64 )) && result+="pollen "
-    (( score & 128 )) && result+="cats "
+    ((score & 1)) && result+="eggs "
+    ((score & 2)) && result+="peanuts "
+    ((score & 4)) && result+="shellfish "
+    ((score & 8)) && result+="strawberries "
+    ((score & 16)) && result+="tomatoes "
+    ((score & 32)) && result+="chocolate "
+    ((score & 64)) && result+="pollen "
+    ((score & 128)) && result+="cats "
 
     echo "${result% }"
 fi
