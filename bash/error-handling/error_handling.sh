@@ -7,4 +7,4 @@ if [[ $# -ne 1 ]]; then
     exit 1
 fi
 
-echo "Hello, "$input""
+echo "Hello, $input"
