@@ -2,10 +2,8 @@
 
 input="$1"
 
-if [[ -z "$input" ]]
-then
+if [[ -z "$input" ]]; then
     echo "One for you, one for me."
-else 
+else
     echo "One for $input, one for me."
 fi
-
