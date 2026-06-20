@@ -2,23 +2,22 @@
 
 input="$1"
 
-if [[ $# -gt 1 ]]
+if [[ $# -ne 1 ]]
 then
-    echo "Error: More than one argument"
-    exit -1
+    echo "Error: invalid input"
+    exit 1
 fi
 
-if [[ $1 -gt 64 ]]
+if [[ $input == "total" ]]
 then
-    echo "Error: Greater than 64"
-    exit -1
+    echo $(( (2 ** 64) - 1 ))
+    exit 0
 fi
 
-if [[ $1 -lt 1 ]]
+if [[ $input -lt 1 || $input -gt 64 ]]
 then
-    echo "Error: Less than 1"
-    exit -1
+    echo "Error: invalid input"
+    exit 1
 fi
 
-echo (( 2 ** $input ))
-
+echo $(( 2 ** (input - 1) ))
