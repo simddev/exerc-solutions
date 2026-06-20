@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+input="$1"
+
+if [[ $# -gt 1 ]]
+then
+    echo "Error: More than one argument"
+    exit -1
+fi
+
+if [[ $1 -gt 64 ]]
+then
+    echo "Error: Greater than 64"
+    exit -1
+fi
+
+if [[ $1 -lt 1 ]]
+then
+    echo "Error: Less than 1"
+    exit -1
+fi
+
+echo (( 2 ** $input ))
+
