@@ -29,36 +29,40 @@ verbs=(
     "belonged to"
 )
 
-[[ $# -eq 2 ]] || exit 1
-
-start=$1
-end=$2
-
-if ((start < 1 || end < 1 || start > 12 || end > 12 || start > end)); then
-    echo "invalid verse"
+# Handle the special "all" argument
+if [[ $# -eq 1 && "$1" == "all" ]]; then
+    start=1
+    end=12
+elif [[ $# -eq 2 ]]; then
+    start=$1
+    end=$2
+else
+    echo "invalid" >&2
     exit 1
 fi
 
-if [[ $1 -eq 1 ]]; then
-    echo "This is the house that Jack built."
-    exit 0
+# Validate range
+if (( start < 1 || end < 1 || start > 12 || end > 12 || start > end )); then
+    echo "invalid" >&2
+    exit 1
 fi
 
 print_verse() {
     local verse=$1
-
-    echo "This is the ${subjects[verse]}"
-
-    for ((i = verse; i > 1; i--)); do
-        echo "that ${verbs[i - 1]} the ${subjects[i - 1]}"
-    done
-    echo "that lay in the house that Jack built."
-
+    if (( verse == 0 )); then
+        # Verse 1 is a special case \u2013 it ends with a period and has no extra lines
+        echo "This is the house that Jack built."
+    else
+        echo "This is the ${subjects[verse]}"
+        for ((i = verse; i > 1; i--)); do
+            echo "that ${verbs[i - 1]} the ${subjects[i - 1]}"
+        done
+        echo "that lay in the house that Jack built."
+    fi
 }
 
 for ((v = start - 1; v < end; v++)); do
     print_verse "$v"
-
     if ((v < end - 1)); then
         echo
     fi
