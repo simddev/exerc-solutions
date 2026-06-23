@@ -39,14 +39,21 @@ if ((start < 1 || end < 1 || start > 12 || end > 12 || start > end)); then
     exit 1
 fi
 
+if [[ $1 -eq 1 ]]; then
+    echo "This is the house that Jack built."
+    exit 0
+fi
+
 print_verse() {
     local verse=$1
 
     echo "This is the ${subjects[verse]}"
 
-    for ((i = verse; i > 0; i--)); do
-        echo "that ${verbs[i - 1]} the ${subjects[i - 1]}."
+    for ((i = verse; i > 1; i--)); do
+        echo "that ${verbs[i - 1]} the ${subjects[i - 1]}"
     done
+    echo "that lay in the house that Jack built."
+
 }
 
 for ((v = start - 1; v < end; v++)); do
