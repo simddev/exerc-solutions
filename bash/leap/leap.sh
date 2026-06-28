@@ -6,4 +6,10 @@ set -euo pipefail
 
 input="$1"
 
+if [[ $1 % 4 == 0 ]] && [[ $1 % 100 != 0 ]] && [[ $1 % 400 == 0 ]]; then
+    echo "true"; exit 0
+
+else
+    echo "false"; exit 1
+fi
 
