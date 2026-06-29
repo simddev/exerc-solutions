@@ -2,7 +2,6 @@
 load bats-extra
 
 @test "format smallest non-exceptional ordinal numeral 4" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Gianna" 4
 
     assert_success
@@ -10,7 +9,6 @@ load bats-extra
 }
 
 @test "format greatest single digit non-exceptional ordinal numeral 9" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Maarten" 9
 
     assert_success
@@ -18,7 +16,6 @@ load bats-extra
 }
 
 @test "format non-exceptional ordinal numeral 5" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Petronila" 5
 
     assert_success
@@ -26,7 +23,6 @@ load bats-extra
 }
 
 @test "format non-exceptional ordinal numeral 6" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Attakullakulla" 6
 
     assert_success
@@ -34,7 +30,6 @@ load bats-extra
 }
 
 @test "format non-exceptional ordinal numeral 7" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Kate" 7
 
     assert_success
@@ -42,7 +37,6 @@ load bats-extra
 }
 
 @test "format non-exceptional ordinal numeral 8" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Maximiliano" 8
 
     assert_success
@@ -50,7 +44,6 @@ load bats-extra
 }
 
 @test "format exceptional ordinal numeral 1" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Mary" 1
 
     assert_success
@@ -58,7 +51,6 @@ load bats-extra
 }
 
 @test "format exceptional ordinal numeral 2" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Haruto" 2
 
     assert_success
@@ -66,7 +58,6 @@ load bats-extra
 }
 
 @test "format exceptional ordinal numeral 3" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Henriette" 3
 
     assert_success
@@ -74,7 +65,6 @@ load bats-extra
 }
 
 @test "format smallest two digit non-exceptional ordinal numeral 10" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Alvarez" 10
 
     assert_success
@@ -82,7 +72,6 @@ load bats-extra
 }
 
 @test "format non-exceptional ordinal numeral 11" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Jacqueline" 11
 
     assert_success
@@ -90,7 +79,6 @@ load bats-extra
 }
 
 @test "format non-exceptional ordinal numeral 12" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Juan" 12
 
     assert_success
@@ -98,7 +86,6 @@ load bats-extra
 }
 
 @test "format non-exceptional ordinal numeral 13" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Patricia" 13
 
     assert_success
@@ -106,7 +93,6 @@ load bats-extra
 }
 
 @test "format exceptional ordinal numeral 21" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Washi" 21
 
     assert_success
@@ -114,7 +100,6 @@ load bats-extra
 }
 
 @test "format exceptional ordinal numeral 62" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Nayra" 62
 
     assert_success
@@ -122,7 +107,6 @@ load bats-extra
 }
 
 @test "format exceptional ordinal numeral 100" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "John" 100
 
     assert_success
@@ -130,7 +114,6 @@ load bats-extra
 }
 
 @test "format exceptional ordinal numeral 101" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Zeinab" 101
 
     assert_success
@@ -138,7 +121,6 @@ load bats-extra
 }
 
 @test "format non-exceptional ordinal numeral 112" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Knud" 112
 
     assert_success
@@ -146,7 +128,6 @@ load bats-extra
 }
 
 @test "format exceptional ordinal numeral 123" {
-    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash line_up.sh "Yma" 123
 
     assert_success
