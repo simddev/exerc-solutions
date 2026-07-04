@@ -4,4 +4,4 @@ set -euo pipefail
 
 input=$1
 
-if [[  ]]
+if [[ $# -ne 1 ]];
