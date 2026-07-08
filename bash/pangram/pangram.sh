@@ -7,3 +7,9 @@ input=$1
 if [[ $# -ne 1 ]];
     echo "Usage $0: enter "
 
+
+
+
+
+
+
