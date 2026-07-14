@@ -2,14 +2,15 @@
 
 set -euo pipefail
 
-input=$1
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <sentence>"
+    exit 1
+fi
 
-if [[ $# -ne 1 ]];
-    echo "Usage $0: enter "
+input="${1,,}"
 
+for c in {a..z}; do
+    [[ "$input" != *"$c"* ]] && echo "false" && exit 0
+done
 
-
-
-
-
-
+echo "true"
